@@ -1,0 +1,325 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+
+:root {
+  --primary-color: #7f5af0;
+  --primary-color-light: #a18aff;
+  --secondary-color: #e0e0e0;
+  --text-color: #232946;
+  --border-radius: 18px;
+  --light: #f4f6fb;
+  --dark: #232946;
+  --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  --shadow-hover: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
+  --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  --danger: #ff6a6a;
+  --success: #2ec4b6;
+  --background-color: #e5e9f7;
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-blur: blur(16px);
+}
+
+/* Base reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  padding: 20px;
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.app {
+  width: 100%;
+  max-width: 500px;
+  background-color: var(--light);
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 10px var(--shadow);
+  overflow: hidden;
+  animation: slideUp 0.6s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+header {
+  background-color: var(--primary-color);
+  color: var(--light);
+  display: flex;
+  text-align: center;
+  align-items: center;
+  flex-direction: row;
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+  padding: 20px;
+  gap: 10px;
+}
+
+header h1 {
+  font-size: 1.1rem;
+  padding: 4px;
+}
+header p {
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+/* Input Section */
+.todo-input {
+  display: flex;
+  padding: 20px;
+  background: var(--light);
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.todo-input input {
+  flex: 1;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid var(--secondary-color);
+  border-radius: var(--border-radius);
+  box-shadow: 0 1px 5px var(--shadow);
+  transition: var(--transition);
+}
+
+.todo-input input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 1px 5px var(--shadow-hover);
+}
+
+.todo-input button {
+  background: var(--primary-color);
+  color: var(--light);
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  box-shadow: 0 1px 5px var(--shadow);
+  transition: var(--transition);
+}
+
+.todo-input button:hover {
+  background: var(--primary-color-light);
+  box-shadow: 0 1px 5px var(--shadow-hover);
+}
+
+/* Filters */
+.filters {
+  display: flex;
+  gap: 15px;
+  padding: 15px 25px;
+  border-bottom: 1px solid var(--secondary-color);
+}
+
+.filter {
+  padding: 5px 3px;
+  cursor: pointer;
+  color: var(--text-color);
+  transition: var(--transition);
+}
+
+.filter:hover {
+  color: var(--primary-color);
+  transform: scale(1.1);
+}
+
+.filter.active {
+  color: var(--primary-color);
+  font-weight: 600;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+/* Todo List */
+.todos-container {
+  background: var(--light);
+  padding: 20px;
+  max-height: 600px;
+  overflow-y: auto;
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+  box-shadow: 0 -1px 5px var(--shadow);
+}
+
+#todos-list {
+  list-style: none;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid var(--secondary-color);
+  transition: var(--transition);
+}
+
+.todo-item:last-child {
+  border-bottom: none;
+}
+
+.todo-item:hover {
+  background: var(--secondary-color);
+  box-shadow: 0 1px 5px var(--shadow-hover);
+}
+
+.todo-item-text {
+  flex: 1;
+  font-size: 1rem;
+  padding: 0 10px;
+  color: var(--text-color);
+}
+
+.todo-item-text.completed {
+  text-decoration: line-through;
+  color: var(--secondary-color);
+}
+
+/* Checkbox */
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.checkbox-container input {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.checkbox-container input:checked {
+  background-color: var(--primary-color);
+}
+
+.checkbox-container input:checked + label {
+  text-decoration: line-through;
+  color: var(--secondary-color);
+}
+
+.checkbox-container label {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  font-size: 1rem;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+.todo-checkbox:checked + .check-mark {
+  background-color: var(--success);
+}
+
+.todo-checkbox:checked + .check-mark::after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid var(--light);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* Delete Button */
+.delete-btn {
+  background: none;
+  border: none;
+  color: var(--danger);
+  padding: 5px 10px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 0.9rem;
+  box-shadow: 0 1px 5px var(--shadow);
+  transition: var(--transition);
+}
+
+.todo-item:hover .delete-btn {
+  background-color: var(--danger);
+  color: var(--light);
+}
+
+.delete-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 1px 5px var(--shadow-hover);
+}
+
+/* Empty State */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+}
+
+.empty-state i {
+  font-size: 3rem;
+  color: var(--secondary-color);
+  margin-bottom: 10px;
+  opacity: 0.7;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Footer */
+footer {
+  display: flex;
+  text-align: center;
+  padding: 10px;
+  font-size: 0.8rem;
+  color: var(--text-color);
+  background-color: var(--light);
+  border-top: 1px solid var(--secondary-color);
+}
+
+.footer-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+  padding: 0 20px;
+}
+
+#items-left {
+  color: var(--text-color);
+  cursor: pointer;
+  transition: var(--transition);
+}
