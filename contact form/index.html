@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Form</title>
+    <link rel="stylesheet" href="sytle.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <!-- header  -->
+
+      <header>
+          <i class="fas fa-envelope"></i>
+          <h1>Contact Us</h1>
+        <p>Please fill out the form below to get in touch with us.</p>
+      </header>
+
+      <!-- contact form  -->
+      <div class="input-form">
+        <form action="submit">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <input type="text" name="subject" placeholder="Subject" required />
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            required
+          ></textarea>
+        </form>
+        <button type="submit">Send Message</button>
+      </div>
+
+      <!-- footer  -->
+      <footer class="footer">
+        <p>&copy; 2023 Bishwash Chaudhari. All rights reserved.</p>
+        <p>Follow me on social media:</p>
+        <ul class="social-links">
+            <i class="fab fa-github" title="Github"></i>
+            <i class="fab fa-facebook" title="Facebook"></i>
+            <i class="fab fa-linkedin" title="LinkedIn"></i>
+            <i class="fab fa-instagram" title="Instagram"></i>
+        </ul>
+      </footer>
+    </div>
+  </body>
+</html>
