@@ -1,0 +1,296 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
+
+:root {
+  --primary-color: #4b1f7a;
+  --secondary-color: #050510;
+  --text-color: #d4d4d4;
+  --border-color: #11111a;
+  --shadow-color: rgba(10, 0, 20, 0.55);
+  --background-color: #030308;
+  --accent-color: #24104a;
+  --selected-color: #37af28;
+  --not-selected-color: #ff3d61;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  text-align: center;
+  padding: 40px 0;
+  animation: popIn 0.8s ease forwards;
+  animation-delay: 0.2s;
+  animation-fill-mode: both;
+  opacity: 0;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: var(--text-color);
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.2rem;
+  color: var(--text-color);
+}
+
+.pricing-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding-top: 20px;
+}
+
+.card {
+  background-color: var(--secondary-color);
+  border: 1px solid var(--border-color);
+  border-radius: 15px;
+  box-shadow: 0 6px 25px var(--shadow-color);
+  padding: 30px 25px;
+  width: 350px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+  animation: slideFromRight 0.9s ease forwards;
+}
+
+.card:hover {
+  transform: translateY(-12px) scale(1.05);
+  box-shadow: 0 12px 40px rgba(75, 31, 122, 0.7);
+  border-color: var(--primary-color);
+}
+
+.card-header {
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.card-header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0%;
+  height: 2px;
+  background-color: var(--primary-color);
+  border-radius: 2px;
+  transition: width 0.4s ease, left 0.4s ease;
+  transform: translateX(-50%);
+}
+
+.card:hover .card-header::after {
+  width: 80%;
+  left: 50%;
+}
+
+.plan-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 15px;
+  background-color: #d4d4d4;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: popIn 0.6s ease;
+}
+
+.plan-icon i {
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
+.card-header h3 {
+  font-size: 1.6rem;
+  color: var(--text-color);
+}
+
+.card-header .price {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin: 10px 0;
+}
+
+.price .currency,
+.price .period {
+  font-size: 1rem;
+  color: var(--text-color);
+}
+
+.card-header p.description {
+  font-size: 1rem;
+  color: var(--text-color);
+  margin-top: 5px;
+}
+
+.card-body {
+  color: var(--text-color);
+  font-size: 1.1rem;
+}
+
+.features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.features li {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 12px;
+  transition: all 0.3s ease;
+}
+
+.features li i {
+  position: absolute;
+  left: 0;
+  top: 4px;
+  color: var(--selected-color);
+}
+
+.features li.disabled i {
+  color: var(--not-selected-color);
+}
+
+.footer {
+  text-align: center;
+  margin-top: 25px;
+}
+
+.btn {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+  background-color: var(--primary-color);
+  transform: translateY(-3px);
+}
+
+.btn:active {
+  background-color: var(--not-selected-color);
+  transform: translateY(0);
+}
+
+.btn::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background-color: #fff;
+  transition: width 0.3s ease;
+}
+
+.card .highlight {
+  background-color: var(--accent-color);
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes SlidefromLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes SlidefromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes SlidefromTop {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes SlidefromBottom {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

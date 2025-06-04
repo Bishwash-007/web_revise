@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pricing Card</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- header  -->
+      <header>
+        <h1>Choose Your Plan</h1>
+        <p>Select the perfect pricing plan for your needs</p>
+      </header>
+
+      <!-- pricing cards  -->
+      <div class="pricing-cards">
+        <!-- basic plan -->
+        <div class="card">
+          <div class="card-header">
+            <div class="plan-icon">
+              <i class="fas fa-leaf"></i>
+            </div>
+            <h3>Basic</h3>
+            <div class="price">
+              <span class="currency">$</span>
+              <span class="amount">19</span>
+              <span class="period">/month</span>
+            </div>
+            <p class="description">Perfect for individuals starting out</p>
+          </div>
+          <div class="card-body">
+            <ul class="features">
+              <li><i class="fas fa-check"></i>10 GB Storage</li>
+              <li><i class="fas fa-check"></i>100 GB Bandwidth</li>
+              <li><i class="fas fa-check"></i>Email Support</li>
+              <li class="disabled">
+                <i class="fas fa-times"></i>Community Access
+              </li>
+              <li class="disabled">
+                <i class="fas fa-times"></i>Priority Support
+              </li>
+              <li class="disabled">
+                <i class="fas fa-times"></i>Custom Domain
+              </li>
+            </ul>
+            <div class="footer">
+              <button class="btn">Get Started</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- professional plan -->
+        <div class="card highlight">
+          <div class="card-header">
+            <div class="plan-icon">
+              <i class="fas fa-rocket"></i>
+            </div>
+            <h3>Professional</h3>
+            <div class="price">
+              <span class="currency">$</span>
+              <span class="amount">49</span>
+              <span class="period">/month</span>
+            </div>
+            <p class="description">Ideal for professionals and startups</p>
+          </div>
+          <div class="card-body">
+            <ul class="features">
+              <li><i class="fas fa-check"></i>100 GB Storage</li>
+              <li><i class="fas fa-check"></i>1 TB Bandwidth</li>
+              <li><i class="fas fa-check"></i>Email Support</li>
+              <li><i class="fas fa-check"></i>Community Access</li>
+              <li><i class="fas fa-check"></i>Priority Support</li>
+              <li class="disabled">
+                <i class="fas fa-times"></i>Custom Domain
+              </li>
+            </ul>
+            <div class="footer">
+              <button class="btn">Get Started</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- premium plan -->
+        <div class="card">
+          <div class="card-header">
+            <div class="plan-icon">
+              <i class="fas fa-gem"></i>
+            </div>
+            <h3>Premium</h3>
+            <div class="price">
+              <span class="currency">$</span>
+              <span class="amount">99</span>
+              <span class="period">/month</span>
+            </div>
+            <p class="description">Best for enterprises & large teams</p>
+          </div>
+          <div class="card-body">
+            <ul class="features">
+              <li><i class="fas fa-check"></i>Unlimited Storage</li>
+              <li><i class="fas fa-check"></i>Unlimited Bandwidth</li>
+              <li><i class="fas fa-check"></i>Email & Phone Support</li>
+              <li><i class="fas fa-check"></i>Community Access</li>
+              <li><i class="fas fa-check"></i>Priority Support</li>
+              <li><i class="fas fa-check"></i>Custom Domain</li>
+            </ul>
+            <div class="footer">
+              <button class="btn">Get Started</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
