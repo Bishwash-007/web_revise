@@ -3,7 +3,7 @@
 :root {
   --primary-color: #3a2957;
   --secondary-color: #ffffff;
-  --text-color: #18181b;
+  --text-color: #000000;
   --border-radius: 8px;
   --box-shadow: 0 2px 10px rgba(124, 58, 237, 0.08);
   --transition: all 0.3s ease-in-out;
