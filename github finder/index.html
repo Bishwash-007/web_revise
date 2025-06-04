@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GitHub Finder</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <header class="site-header">
+        <i class="fab fa-github fa-3x"></i>
+        <h1>GitHub Finder</h1>
+        <p>Search for GitHub users and view their profiles and repositories.</p>
+      </header>
+
+      <!-- Search Section -->
+      <section class="search-section" aria-label="GitHub User Search">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Enter GitHub username..."
+          autocomplete="off"
+          aria-label="GitHub username"
+        />
+        <button id="search-button" aria-label="Search GitHub user">
+          Search
+        </button>
+      </section>
+
+      <!-- Profile Section -->
+      <section id="profile-container" class="hidden" aria-label="User Profile">
+        <div class="profile-header">
+          <img
+            id="profile-avatar"
+            src=""
+            alt="GitHub User Avatar"
+            width="100"
+            height="100"
+          />
+          <div class="profile-info">
+            <h2 id="profile-name"></h2>
+            <p id="profile-bio"></p>
+            <p id="profile-location"></p>
+            <p>
+              <span id="profile-followers"></span> •
+              <span id="profile-following"></span>
+            </p>
+            <a
+              id="profile-link"
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              >View GitHub Profile</a
+            >
+          </div>
+        </div>
+
+        <div class="repositories">
+          <h3>Repositories</h3>
+          <ul id="repo-list"></ul>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="site-footer">
+        <p>&copy; 2023 GitHub Finder. All rights reserved.</p>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
